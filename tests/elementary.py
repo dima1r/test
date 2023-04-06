@@ -1,4 +1,4 @@
-from ..base_page import BasePage
+from pages.base_page import BasePage
 from time import sleep
 
 def test(driver):
