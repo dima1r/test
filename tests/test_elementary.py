@@ -3,7 +3,6 @@ from time import sleep
 
 def test_main(driver):
     page = BasePage(driver, 'https://www.google.com')
-    #page = BasePage(driver, 'google.com')
     page.open()
     sleep(5)
     cur_url = driver.current_url
