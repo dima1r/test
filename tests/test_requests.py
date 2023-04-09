@@ -12,6 +12,8 @@ def test_get_req():
     headers = {'Accept': 'application/json'}
     try:
         responce = requests.get(SERVICE_URL)
+        data = responce.__getstate__()
+        print(data)
         stat_code = responce.status_code
         assert stat_code in range(200, 300), GlobalErrorMessages.WRONG_STATUS_CODE.value
     except JSONDecodeError:
