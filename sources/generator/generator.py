@@ -2,7 +2,7 @@ from sources.data.data import Person
 from faker import Faker
 
 faker_en = Faker('en_US')
-Faker.seed()
+Faker.seed(0)
 
 def generated_person():
     yield Person(

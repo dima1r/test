@@ -1,6 +1,7 @@
 import conftest
 from selenium.webdriver.support.ui import WebDriverWait as wait
 from selenium.webdriver.support import expected_conditions as EC
+from time import sleep
 
 class BasePage:
     def __init__(self, driver, url):
@@ -30,3 +31,8 @@ class BasePage:
 
     def goto_element(self, element):
         self.driver.execute_script('argument[0].scrollIntoView(element);')
+        #self.driver.execute_script('return arguments[0].scrollIntoView(element);')
+
+    def scroll_down(self):
+        self.driver.execute_script("window.scrollTo(0, 200)")
+        sleep(5)
