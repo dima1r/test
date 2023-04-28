@@ -1,4 +1,4 @@
-from pages.elements_page import TextBoxPage
+from pages.elements_page import TextBoxPage, CheckboxPage
 
 class TestElements:
     class TestTextBox:
@@ -14,4 +14,12 @@ class TestElements:
             print(output_name)
             assert full_name == output_name
             assert email == output_email
+
+    class TestCheckBox:
+
+        def test_checkbox(self, driver):
+            checkbox_page = CheckboxPage(driver, url='https://demoqa.com/checkbox')
+            checkbox_page.open()
+            checkbox_page.open_full_list()
+            checkbox_page.click_random_checkbox()
             
